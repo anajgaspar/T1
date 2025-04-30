@@ -14,13 +14,13 @@ export default class CadastroPet extends Cadastro {
         this.pets = pets
     }
     public cadastrar(): void {
-        console.log(`\nInício do cadastro do pet`);
-        let nomeDono = this.entrada.receberTexto(`Por favor informe o nome do dono do pet: `)
+        console.log(`\nInício do cadastro do pet`)
+        let nomeDono = this.entrada.receberTexto(`Dono do pet: `)
 
-        let nomePet = this.entrada.receberTexto(`Por favor informe o nome do pet: `)
-        let raca = this.entrada.receberTexto(`Por favor informe a raça: `)
-        let genero = this.entrada.receberTexto(`Por favor informe o gênero: `)
-        let tipo = this.entrada.receberTexto(`Por favor informe o tipo do pet: `)
+        let nomePet = this.entrada.receberTexto(`Nome do pet: `)
+        let raca = this.entrada.receberTexto(`Raça: `)
+        let genero = this.entrada.receberTexto(`Gênero: `)
+        let tipo = this.entrada.receberTexto(`Tipo do pet: `)
 
         let pet = new Pet(nomePet, raca, genero, tipo)
         this.pets.push(pet)

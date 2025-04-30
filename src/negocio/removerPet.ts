@@ -1,8 +1,8 @@
 import Pet from "../modelo/pet";
-import Exclusao from "./exclusao";
+import Remover from "./remover";
 import Entrada from "../io/entrada";
 
-export default class ExclusaoPet extends Exclusao {
+export default class ExclusaoPet extends Remover {
     private pets: Array<Pet>
     private entrada: Entrada
     constructor(pets: Array<Pet>){
@@ -11,7 +11,7 @@ export default class ExclusaoPet extends Exclusao {
         this.entrada = new Entrada()
     }
     public excluir(): void {
-        let nomePet = this.entrada.receberTexto(`Por favor informe o nome do pet que deseja excluir: `)
+        let nomePet = this.entrada.receberTexto(`Nome do pet que deseja excluir: `)
         let petEncontrado = false
 
         for (let i = 0; i < this.pets.length; i++) {

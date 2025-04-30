@@ -1,8 +1,8 @@
+import Atualizar from "./atualizar";
 import Cliente from "../modelo/cliente";
-import Exclusao from "./exclusao";
 import Entrada from "../io/entrada";
 
-export default class ExclusaoCliente extends Exclusao {
+export default class AtualizacaoCliente extends Atualizar {
     private clientes: Array<Cliente>
     private entrada: Entrada
     constructor(clientes: Array<Cliente>){
@@ -10,16 +10,15 @@ export default class ExclusaoCliente extends Exclusao {
         this.clientes = clientes
         this.entrada = new Entrada()
     }
-    public excluir(): void {
-        let cpfCliente = this.entrada.receberTexto(`Por favor informe o CPF do cliente que deseja excluir: `)
+    public atualizar(): void {
+        let cpfCliente = this.entrada.receberTexto(`CPF do cliente que deseja atualizar: `)
         let clienteEncontrado = false
 
         for (let i = 0; i < this.clientes.length; i++) {
             if (cpfCliente === this.clientes[i].getCpf.getValor) {
                 clienteEncontrado = true
-                this.clientes.splice(i, 1)
-                console.log('Cliente removido com sucesso :)')
-                break;
+                let novoNome = this.entrada.receberTexto(`Novo nome para o cliente: `)
+                this.clientes[i].nome = novoNome
             }
         }
 

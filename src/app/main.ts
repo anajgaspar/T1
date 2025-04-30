@@ -1,14 +1,21 @@
 import Entrada from "../io/entrada";
 import Empresa from "../modelo/empresa";
-import Cliente from "../modelo/cliente";
 import CadastroCliente from "../negocio/cadastroCliente";
 import ListagemClientes from "../negocio/listagemClientes";
-import AtualizacaoCliente from "../negocio/atualizacaoCliente";
-import ExclusaoCliente from "../negocio/exclusaoCliente";
+import AtualizacaoCliente from "../negocio/atualizarCliente";
+import ExclusaoCliente from "../negocio/removerCliente";
 import CadastroPet from "../negocio/cadastroPet";
-import ListagemPets from "../negocio/listagemPet";
-import AtualizacaoPet from "../negocio/atualizacaoPet";
-import ExclusaoPet from "../negocio/exclusaoPet";
+import ListagemPets from "../negocio/listagemPets";
+import AtualizacaoPet from "../negocio/atualizarPet";
+import ExclusaoPet from "../negocio/removerPet";
+import CadastroProduto from "../negocio/cadastroProduto";
+import ListagemProdutos from "../negocio/listagemProdutos";
+import AtualizacaoProduto from "../negocio/atualizarProdutos";
+import ExclusaoProduto from "../negocio/removerProduto";
+import CadastroServico from "../negocio/cadastroServico";
+import ListagemServicos from "../negocio/listagemServicos";
+import AtualizacaoServico from "../negocio/atualizarServico";
+import ExclusaoServico from "../negocio/removerServico";
 
 console.log(`Seja bem-vindo(a) ao melhor sistema de gerenciamento de pet shops e clínicas veterinárias!`)
 let empresa = new Empresa()
@@ -24,6 +31,14 @@ while (execucao) {
     console.log(`6 - Listar todos os pets`);
     console.log(`7 - Atualizar pet`);
     console.log(`8 - Excluir pet`);
+    console.log(`9 - Cadastrar produto`);
+    console.log(`10 - Listar todos os produtos`);
+    console.log(`11 - Atualizar produto`);
+    console.log(`12 - Excluir produto`);
+    console.log(`13 - Cadastrar serviço`);
+    console.log(`14 - Listar todos os serviços`);
+    console.log(`15 - Atualizar serviço`);
+    console.log(`16 - Excluir serviço`);
     console.log(`0 - Sair`);
 
     let entrada = new Entrada()
@@ -61,6 +76,38 @@ while (execucao) {
         case 8:
             let exclusaoPet = new ExclusaoPet(empresa.getPets)
             exclusaoPet.excluir()
+            break;
+        case 9:
+            let cadastroProduto = new CadastroProduto(empresa.getProdutos)
+            cadastroProduto.cadastrar()
+            break;
+        case 10:
+            let listagemProdutos = new ListagemProdutos(empresa.getProdutos)
+            listagemProdutos.listar()
+            break;
+        case 11:
+            let atualizacaoProduto = new AtualizacaoProduto(empresa.getProdutos)
+            atualizacaoProduto.atualizar()
+            break;
+        case 12:
+            let exclusaoProduto = new ExclusaoProduto(empresa.getProdutos)
+            exclusaoProduto.excluir()
+            break;
+        case 13:
+            let cadastroServico = new CadastroServico(empresa.getServicos)
+            cadastroServico.cadastrar()
+            break;
+        case 14:
+            let listagemServicos = new ListagemServicos(empresa.getServicos)
+            listagemServicos.listar()
+            break;
+        case 15:
+            let atualizacaoServico = new AtualizacaoServico(empresa.getServicos)
+            atualizacaoServico.atualizar()
+            break;
+        case 16:
+            let exclusaoServico = new ExclusaoServico(empresa.getServicos)
+            exclusaoServico.excluir()
             break;
         case 0:
             execucao = false
