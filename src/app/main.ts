@@ -16,6 +16,8 @@ import CadastroServico from "../negocio/cadastroServico";
 import ListagemServicos from "../negocio/listagemServicos";
 import AtualizacaoServico from "../negocio/atualizarServico";
 import ExclusaoServico from "../negocio/removerServico";
+import RegistrarConsumo from "../negocio/registrarConsumo";
+import ListagemConsumo from "../negocio/listagemConsumo";
 
 console.log(`Seja bem-vindo(a) ao melhor sistema de gerenciamento de pet shops e clínicas veterinárias!`)
 let empresa = new Empresa()
@@ -39,6 +41,11 @@ while (execucao) {
     console.log(`14 - Listar todos os serviços`);
     console.log(`15 - Atualizar serviço`);
     console.log(`16 - Excluir serviço`);
+    console.log(`17 - Registrar consumo`);
+    console.log(`18 - Listar os 10 clientes que mais consumiram produtos ou serviços (quantidade)`);
+    console.log(`19 - Listar os 5 clientes que mais consumiram produtos ou serviços (valor)`);
+    console.log(`20 - Listar os serviços ou produtos mais consumidos (geral)`);
+    console.log(`21 - Listar os serviços ou produtos mais consumidos por tipo e raça de pets`);
     console.log(`0 - Sair`);
 
     let entrada = new Entrada()
@@ -109,11 +116,31 @@ while (execucao) {
             let exclusaoServico = new ExclusaoServico(empresa.getServicos)
             exclusaoServico.excluir()
             break;
+        case 17:
+            let registrarConsumo = new RegistrarConsumo(empresa.getClientes, empresa.getProdutos, empresa.getServicos)
+            registrarConsumo.registrar()
+            break;
+        case 18:
+            let dezClientes = new ListagemConsumo(empresa.getClientes)
+            dezClientes.DezClientesQueMaisConsumiramQuantidade()
+            break;
+        case 19:
+            let cincoClientes = new ListagemConsumo(empresa.getClientes)
+            cincoClientes.CincoClientesQueMaisConsumiramValor()
+            break;
+        case 20:
+            let produtosEServicos = new ListagemConsumo(empresa.getClientes)
+            produtosEServicos.ProdutosEServicosMaisConsumidos()
+            break;
+        case 21:
+            let produtosEServicosPets = new ListagemConsumo(empresa.getClientes)
+            produtosEServicosPets.ProdutosEServicosMaisConsumidosPets()
+            break;
         case 0:
             execucao = false
             console.log(`Até mais!`)
             break;
         default:
-            console.log(`Operação não entendida :(`)
+            console.log(`Opção não entendida :(`)
     }
 }
