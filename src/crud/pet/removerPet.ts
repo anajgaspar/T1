@@ -1,6 +1,6 @@
-import Pet from "../modelo/pet";
-import Remover from "./remover";
-import Entrada from "../io/entrada";
+import Pet from "../../classes/pet";
+import Remover from "../remover";
+import Entrada from "../../app/entrada";
 
 export default class ExclusaoPet extends Remover {
     private pets: Array<Pet>

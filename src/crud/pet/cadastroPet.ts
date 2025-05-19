@@ -1,7 +1,7 @@
-import Cadastro from "./cadastro";
-import Pet from "../modelo/pet";
-import Cliente from "../modelo/cliente";
-import Entrada from "../io/entrada";
+import Cadastro from "../cadastro";
+import Pet from "../../classes/pet";
+import Cliente from "../../classes/cliente";
+import Entrada from "../../app/entrada";
 
 export default class CadastroPet extends Cadastro {
     private clientes: Array<Cliente>

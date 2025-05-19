@@ -1,6 +1,6 @@
-import Produto from "../modelo/produto";
-import Remover from "./remover";
-import Entrada from "../io/entrada";
+import Produto from "../../classes/produto";
+import Remover from "../remover";
+import Entrada from "../../app/entrada";
 
 export default class ExclusaoProduto extends Remover {
     private produtos: Array<Produto>

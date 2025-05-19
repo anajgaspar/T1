@@ -1,4 +1,4 @@
-import Cliente from "../modelo/cliente";
+import Cliente from "../classes/cliente";
 
 export default class ListagemConsumo {
     private clientes: Array<Cliente>

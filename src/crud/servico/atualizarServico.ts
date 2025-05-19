@@ -1,6 +1,6 @@
-import Servico from "../modelo/servico";
-import Entrada from "../io/entrada";
-import Atualizar from "./atualizar";
+import Servico from "../../classes/servico";
+import Entrada from "../../app/entrada";
+import Atualizar from "../atualizar";
 
 export default class AtualizacaoServico extends Atualizar {
     private entrada: Entrada

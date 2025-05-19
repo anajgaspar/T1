@@ -1,6 +1,6 @@
-import Produto from "../modelo/produto";
-import Entrada from "../io/entrada";
-import Atualizar from "./atualizar";
+import Produto from "../../classes/produto";
+import Entrada from "../../app/entrada";
+import Atualizar from "../atualizar";
 
 export default class AtualizacaoProduto extends Atualizar {
     private entrada: Entrada

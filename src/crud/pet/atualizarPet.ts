@@ -1,6 +1,6 @@
-import Atualizar from "./atualizar";
-import Pet from "../modelo/pet";
-import Entrada from "../io/entrada";
+import Atualizar from "../atualizar";
+import Pet from "../../classes/pet";
+import Entrada from "../../app/entrada";
 
 export default class AtualizacaoPet extends Atualizar {
     private entrada: Entrada
