@@ -14,10 +14,11 @@ export default class CadastroCliente extends Cadastro {
     public cadastrar(): void {
         console.log(`\nInício do cadastro do cliente`)
         let nome = this.entrada.receberTexto(`Nome do cliente: `)
-        let valor = this.entrada.receberTexto(`Número do cpf: `)
-        let cpf = new CPF(valor)
-        let cliente = new Cliente(nome, cpf)
+        let nomeSocial = this.entrada.receberTexto(`Nome Social: `)
+        let valorCpf = this.entrada.receberTexto(`Número do cpf: `)
+        let cpf = new CPF(valorCpf)
+        let cliente = new Cliente(nome, nomeSocial, cpf)
         this.clientes.push(cliente)
-        console.log(`\nCliente '${nome}' cadastrado com sucesso :)\n`)
+        console.log(`\nCliente '${nomeSocial}' cadastrado com sucesso :)\n`)
     }
 }

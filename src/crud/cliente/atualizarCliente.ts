@@ -18,7 +18,9 @@ export default class AtualizacaoCliente extends Atualizar {
             if (cpfCliente === this.clientes[i].getCpf.getValor) {
                 clienteEncontrado = true
                 let novoNome = this.entrada.receberTexto(`Novo nome para o cliente: `)
+                let novoNomeSocial = this.entrada.receberTexto(`Novo nome social para o cliente: `)
                 this.clientes[i].nome = novoNome
+                this.clientes[i].nomeSocial = novoNomeSocial
             }
         }
 
