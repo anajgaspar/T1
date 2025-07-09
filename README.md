@@ -24,10 +24,11 @@ Aplicação web desenvolvida como parte da disciplina **Técnicas de Programaç�
  cd T1
   ```
   
-### 2. Instale as dependências:
+### 2. Instale as dependências e compile o projeto:
 
 ```bash
  npm install
+ npx tsc
 ```
 
 ### 3. Em seguida, rode o comando para iniciar a aplicação:
